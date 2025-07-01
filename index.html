@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADB-IO - Green Learning Management System with AI</title>
+    <meta name="description" content="Revolutionary LMS powered by 4 AI Agents: Content Curator, Assessment Generator, Learning Analytics, and Green Computing. Sustainable education for the future.">
+    <meta name="keywords" content="LMS, AI, Green Computing, Education, Learning Management, Sustainable Technology">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adb-io.github.io/adb-io-homepage/">
+    <meta property="og:title" content="ADB-IO - Green Learning Management System with AI">
+    <meta property="og:description" content="Revolutionary LMS powered by 4 AI Agents for sustainable education">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://adb-io.github.io/adb-io-homepage/">
+    <meta property="twitter:title" content="ADB-IO - Green Learning Management System with AI">
+    <meta property="twitter:description" content="Revolutionary LMS powered by 4 AI Agents for sustainable education">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://adb-io.github.io/adb-io-shared-components/css/components.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="assets/logo.svg" alt="ADB-IO Logo" class="logo">
+                <span class="brand-text">ADB-IO</span>
+                <span class="adb-green-badge">Green AI</span>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#ai-agents" class="nav-link">AI Agents</a>
+                <a href="#green-computing" class="nav-link">Green Computing</a>
+                <a href="#demo" class="nav-link">Demo</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="https://adb-io.github.io/adb-io-auth-portal/" class="adb-btn adb-btn--secondary adb-btn--small">Login</a>
+                <a href="https://adb-io.github.io/adb-io-auth-portal/pages/register.html" class="adb-btn adb-btn--primary adb-btn--small">Get Started</a>
+            </div>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        The Future of Learning is
+                        <span class="gradient-text">Green & Intelligent</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Revolutionary Learning Management System powered by 4 AI Agents.
+                        Experience personalized education while reducing your carbon footprint
+                        with our sustainable technology.
+                    </p>
+
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">AI Agents</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">75%</span>
+                            <span class="stat-label">Less Energy</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Personalized</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="https://adb-io.github.io/adb-io-auth-portal/pages/register.html" class="adb-btn adb-btn--primary adb-btn--large">
+                            Start Learning Free
+                        </a>
+                        <button class="adb-btn adb-btn--secondary adb-btn--large" id="watch-demo">
+                            <span class="btn-icon">▶</span>
+                            Watch Demo
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="dashboard-preview">
+                        <div class="preview-header">
+                            <div class="preview-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <span class="preview-title">ADB-IO Dashboard</span>
+                        </div>
+                        <div class="preview-content">
+                            <div class="ai-agent-cards">
+                                <div class="ai-card">
+                                    <div class="ai-icon">🤖</div>
+                                    <span>Content Curator</span>
+                                </div>
+                                <div class="ai-card">
+                                    <div class="ai-icon">📝</div>
+                                    <span>Assessment Generator</span>
+                                </div>
+                                <div class="ai-card">
+                                    <div class="ai-icon">📊</div>
+                                    <span>Learning Analytics</span>
+                                </div>
+                                <div class="ai-card">
+                                    <div class="ai-icon">🌿</div>
+                                    <span>Green Computing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose ADB-IO?</h2>
+                <p class="section-description">
+                    Experience the perfect blend of artificial intelligence and environmental consciousness
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Personalized Learning</h3>
+                    <p class="feature-description">
+                        AI-powered content recommendations tailored to your learning style,
+                        pace, and preferences for maximum effectiveness.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-description">
+                        Optimized for speed with green computing principles.
+                        Load times under 1 second, minimal resource usage.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3 class="feature-title">Eco-Friendly</h3>
+                    <p class="feature-description">
+                        Reduce your digital carbon footprint by 75% while learning.
+                        Sustainable technology for a better future.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Secure & Private</h3>
+                    <p class="feature-description">
+                        PASETO authentication, end-to-end encryption, and
+                        privacy-first design protect your data.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Mobile First</h3>
+                    <p class="feature-description">
+                        Responsive design that works perfectly on all devices.
+                        Learn anywhere, anytime, on any screen size.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">Always Improving</h3>
+                    <p class="feature-description">
+                        Continuous AI learning and updates. The system gets
+                        smarter and more efficient over time.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Agents Section -->
+    <section class="ai-agents" id="ai-agents">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet Your AI Learning Assistants</h2>
+                <p class="section-description">
+                    Four specialized AI agents working together to revolutionize your learning experience
+                </p>
+            </div>
+
+            <div class="agents-grid">
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon">🤖</div>
+                        <h3 class="agent-title">Content Curator</h3>
+                        <span class="agent-status">Active</span>
+                    </div>
+                    <p class="agent-description">
+                        Intelligently analyzes and recommends learning materials based on your
+                        progress, interests, and learning style. Discovers the perfect content for you.
+                    </p>
+                    <div class="agent-features">
+                        <span class="feature-tag">Smart Recommendations</span>
+                        <span class="feature-tag">Content Analysis</span>
+                        <span class="feature-tag">Personalization</span>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon">📝</div>
+                        <h3 class="agent-title">Assessment Generator</h3>
+                        <span class="agent-status">Active</span>
+                    </div>
+                    <p class="agent-description">
+                        Creates personalized quizzes, assignments, and assessments that adapt to
+                        your knowledge level. Provides instant feedback and detailed explanations.
+                    </p>
+                    <div class="agent-features">
+                        <span class="feature-tag">Auto-Generation</span>
+                        <span class="feature-tag">Adaptive Testing</span>
+                        <span class="feature-tag">Instant Feedback</span>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon">📊</div>
+                        <h3 class="agent-title">Learning Analytics</h3>
+                        <span class="agent-status">Active</span>
+                    </div>
+                    <p class="agent-description">
+                        Tracks your learning patterns, predicts performance, and identifies areas
+                        for improvement. Provides insights to optimize your study strategy.
+                    </p>
+                    <div class="agent-features">
+                        <span class="feature-tag">Performance Tracking</span>
+                        <span class="feature-tag">Predictive Analytics</span>
+                        <span class="feature-tag">Study Optimization</span>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon">🌿</div>
+                        <h3 class="agent-title">Green Computing</h3>
+                        <span class="agent-status">Active</span>
+                    </div>
+                    <p class="agent-description">
+                        Monitors and optimizes system performance for minimal environmental impact.
+                        Tracks your carbon footprint and suggests eco-friendly learning habits.
+                    </p>
+                    <div class="agent-features">
+                        <span class="feature-tag">Carbon Tracking</span>
+                        <span class="feature-tag">Energy Optimization</span>
+                        <span class="feature-tag">Sustainability</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Green Computing Section -->
+    <section class="green-computing" id="green-computing">
+        <div class="container">
+            <div class="green-content">
+                <div class="green-text">
+                    <h2 class="section-title">🌿 Sustainable Learning Technology</h2>
+                    <p class="section-description">
+                        ADB-IO is designed with environmental responsibility at its core.
+                        Our green computing approach reduces energy consumption while
+                        delivering superior performance.
+                    </p>
+
+                    <div class="green-stats">
+                        <div class="green-stat">
+                            <span class="stat-number">75%</span>
+                            <span class="stat-label">Less Energy Usage</span>
+                        </div>
+                        <div class="green-stat">
+                            <span class="stat-number">0.2kg</span>
+                            <span class="stat-label">CO₂ per Session</span>
+                        </div>
+                        <div class="green-stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Renewable Hosting</span>
+                        </div>
+                    </div>
+
+                    <div class="green-features">
+                        <div class="green-feature">
+                            <span class="feature-icon">⚡</span>
+                            <span>Optimized Code & Minimal Dependencies</span>
+                        </div>
+                        <div class="green-feature">
+                            <span class="feature-icon">☁️</span>
+                            <span>Serverless Architecture</span>
+                        </div>
+                        <div class="green-feature">
+                            <span class="feature-icon">📱</span>
+                            <span>Mobile-First Design</span>
+                        </div>
+                        <div class="green-feature">
+                            <span class="feature-icon">🔋</span>
+                            <span>Battery-Friendly Interface</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="green-visual">
+                    <div class="carbon-tracker">
+                        <h4>Your Carbon Impact</h4>
+                        <div class="carbon-meter">
+                            <div class="meter-fill" style="width: 25%"></div>
+                        </div>
+                        <p>25% of traditional LMS carbon footprint</p>
+
+                        <div class="eco-tips">
+                            <h5>💡 Eco Tips</h5>
+                            <ul>
+                                <li>Use dark mode to save battery</li>
+                                <li>Study during renewable energy peak hours</li>
+                                <li>Enable power saving mode</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience ADB-IO in Action</h2>
+                <p class="section-description">
+                    See how our AI agents work together to create a personalized learning experience
+                </p>
+            </div>
+
+            <div class="demo-content">
+                <div class="demo-tabs">
+                    <button class="demo-tab active" data-tab="student">Student View</button>
+                    <button class="demo-tab" data-tab="teacher">Teacher View</button>
+                    <button class="demo-tab" data-tab="admin">Admin View</button>
+                </div>
+
+                <div class="demo-panels">
+                    <div class="demo-panel active" id="student-panel">
+                        <div class="demo-links">
+                            <a href="https://adb-io.github.io/adb-io-student-portal/" class="demo-link" target="_blank">
+                                <div class="link-icon">👨‍🎓</div>
+                                <div class="link-content">
+                                    <h4>Student Dashboard</h4>
+                                    <p>Personalized learning experience with AI recommendations</p>
+                                </div>
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="demo-panel" id="teacher-panel">
+                        <div class="demo-links">
+                            <a href="https://adb-io.github.io/adb-io-lecturer-dashboard/" class="demo-link" target="_blank">
+                                <div class="link-icon">👩‍🏫</div>
+                                <div class="link-content">
+                                    <h4>Teacher Dashboard</h4>
+                                    <p>AI-powered course management and student analytics</p>
+                                </div>
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="demo-panel" id="admin-panel">
+                        <div class="demo-links">
+                            <a href="https://adb-io.github.io/adb-io-admin-panel/" class="demo-link" target="_blank">
+                                <div class="link-icon">⚙️</div>
+                                <div class="link-content">
+                                    <h4>Admin Panel</h4>
+                                    <p>System management with green computing insights</p>
+                                </div>
+                                <span class="link-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <span class="brand-text">ADB-IO</span>
+                        <span class="adb-green-badge">Green AI</span>
+                    </div>
+                    <p class="footer-description">
+                        Revolutionary Learning Management System powered by AI and
+                        designed for environmental sustainability.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://adb-io.github.io/adb-io-student-portal/">Student Portal</a></li>
+                        <li><a href="https://adb-io.github.io/adb-io-lecturer-dashboard/">Teacher Dashboard</a></li>
+                        <li><a href="https://adb-io.github.io/adb-io-admin-panel/">Admin Panel</a></li>
+                        <li><a href="https://adb-io.github.io/adb-io-shared-components/">Components</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>AI Agents</h4>
+                    <ul class="footer-links">
+                        <li><a href="#ai-agents">Content Curator</a></li>
+                        <li><a href="#ai-agents">Assessment Generator</a></li>
+                        <li><a href="#ai-agents">Learning Analytics</a></li>
+                        <li><a href="#ai-agents">Green Computing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#green-computing">Green Computing</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="https://github.com/adb-io">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 ADB-IO. Built with 🌿 for sustainable education.</p>
+                <div class="footer-stats">
+                    <span>🌱 Carbon Neutral</span>
+                    <span>⚡ 75% Less Energy</span>
+                    <span>🤖 4 AI Agents</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
