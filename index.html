@@ -5,42 +5,635 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADB-IO - Green Learning Management System with AI</title>
     <meta name="description" content="Revolutionary LMS powered by 4 AI Agents: Content Curator, Assessment Generator, Learning Analytics, and Green Computing. Sustainable education for the future.">
-    <meta name="keywords" content="LMS, AI, Green Computing, Education, Learning Management, Sustainable Technology">
+    
+    <!-- Embedded Styles for immediate functionality -->
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary: #10b981;
+            --green: #059669;
+            --green-light: #d1fae5;
+            --green-dark: #047857;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --spacing-2: 0.5rem;
+            --spacing-3: 0.75rem;
+            --spacing-4: 1rem;
+            --spacing-6: 1.5rem;
+            --spacing-8: 2rem;
+            --spacing-12: 3rem;
+            --spacing-16: 4rem;
+            --spacing-20: 5rem;
+            --radius: 0.375rem;
+            --radius-lg: 0.5rem;
+            --radius-xl: 0.75rem;
+            --radius-2xl: 1rem;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --transition: all 0.15s ease-in-out;
+        }
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://adb-io.github.io/adb-io-homepage/">
-    <meta property="og:title" content="ADB-IO - Green Learning Management System with AI">
-    <meta property="og:description" content="Revolutionary LMS powered by 4 AI Agents for sustainable education">
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://adb-io.github.io/adb-io-homepage/">
-    <meta property="twitter:title" content="ADB-IO - Green Learning Management System with AI">
-    <meta property="twitter:description" content="Revolutionary LMS powered by 4 AI Agents for sustainable education">
+        html {
+            scroll-behavior: smooth;
+        }
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--gray-800);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://adb-io.github.io/adb-io-shared-components/css/components.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/components.css">
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-6);
+        }
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="css/main.css" as="style">
-    <link rel="preload" href="js/main.js" as="script">
+        /* Button Components */
+        .adb-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-2);
+            font-family: var(--font-family);
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid transparent;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .adb-btn:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        .adb-btn--small {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+            min-height: 2rem;
+        }
+
+        .adb-btn--medium {
+            padding: var(--spacing-2) var(--spacing-4);
+            font-size: 1rem;
+            min-height: 2.5rem;
+        }
+
+        .adb-btn--large {
+            padding: var(--spacing-3) var(--spacing-6);
+            font-size: 1.125rem;
+            min-height: 3rem;
+        }
+
+        .adb-btn--primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+        }
+
+        .adb-btn--primary:hover:not(:disabled) {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .adb-btn--secondary {
+            background-color: var(--gray-100);
+            border-color: var(--gray-200);
+            color: var(--gray-700);
+        }
+
+        .adb-btn--secondary:hover:not(:disabled) {
+            background-color: var(--gray-200);
+            text-decoration: none;
+            color: var(--gray-700);
+        }
+
+        /* Green Badge */
+        .adb-green-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            background-color: var(--green-light);
+            color: var(--green-dark);
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius);
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .adb-green-badge::before {
+            content: '🌿';
+            font-size: 0.875em;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-200);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--spacing-4) var(--spacing-6);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+        }
+
+        .brand-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: var(--spacing-8);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: var(--spacing-3);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--green-light) 100%);
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-12);
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-6);
+            line-height: 1.1;
+            color: var(--gray-900);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            margin-bottom: var(--spacing-8);
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: var(--spacing-8);
+            margin-bottom: var(--spacing-8);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: var(--spacing-4);
+            flex-wrap: wrap;
+        }
+
+        .btn-icon {
+            margin-right: var(--spacing-2);
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dashboard-preview {
+            background: var(--white);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-xl);
+            padding: var(--spacing-6);
+            max-width: 500px;
+            width: 100%;
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .dashboard-preview:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+        }
+
+        .preview-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+            margin-bottom: var(--spacing-4);
+            padding-bottom: var(--spacing-3);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .preview-dots {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .preview-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gray-200);
+        }
+
+        .preview-dots span:nth-child(1) { background: #ff5f56; }
+        .preview-dots span:nth-child(2) { background: #ffbd2e; }
+        .preview-dots span:nth-child(3) { background: #27ca3f; }
+
+        .preview-title {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        .ai-agent-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-3);
+        }
+
+        .ai-card {
+            background: var(--gray-50);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-4);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .ai-card:hover {
+            background: var(--green-light);
+            transform: translateY(-2px);
+        }
+
+        .ai-icon {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-2);
+        }
+
+        .ai-card span {
+            font-size: 0.75rem;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        /* Features Section */
+        .features {
+            padding: var(--spacing-20) 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-12);
+        }
+
+        .section-title {
+            font-size: 1.875rem;
+            margin-bottom: var(--spacing-4);
+            color: var(--gray-900);
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-8);
+        }
+
+        .feature-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-8);
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 2.25rem;
+            margin-bottom: var(--spacing-4);
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-3);
+            color: var(--gray-900);
+        }
+
+        .feature-description {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            color: var(--gray-200);
+            padding: var(--spacing-16) 0 var(--spacing-8) 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--spacing-8);
+            margin-bottom: var(--spacing-8);
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+            margin-bottom: var(--spacing-4);
+        }
+
+        .footer-brand .brand-text {
+            color: var(--white);
+        }
+
+        .footer-description {
+            color: var(--gray-200);
+            line-height: 1.6;
+            max-width: 300px;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            margin-bottom: var(--spacing-4);
+            font-size: 1.125rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--spacing-2);
+        }
+
+        .footer-links a {
+            color: var(--gray-200);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: var(--spacing-8);
+            border-top: 1px solid var(--gray-700);
+            flex-wrap: wrap;
+            gap: var(--spacing-4);
+        }
+
+        .footer-stats {
+            display: flex;
+            gap: var(--spacing-6);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-8);
+                text-align: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-6);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2.25rem;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .hero-actions {
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-stats {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--spacing-4);
+            }
+            
+            .hero-title {
+                font-size: 1.875rem;
+            }
+            
+            .hero-description {
+                font-size: 1.125rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: var(--spacing-4);
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .hero-actions .adb-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .ai-agent-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-stats {
+                flex-direction: column;
+                gap: var(--spacing-2);
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-brand">
-                <img src="assets/logo.svg" alt="ADB-IO Logo" class="logo">
                 <span class="brand-text">ADB-IO</span>
                 <span class="adb-green-badge">Green AI</span>
             </div>
-
+            
             <div class="nav-menu" id="nav-menu">
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#ai-agents" class="nav-link">AI Agents</a>
@@ -48,17 +641,11 @@
                 <a href="#demo" class="nav-link">Demo</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-
+            
             <div class="nav-actions">
                 <a href="https://adb-io.github.io/adb-io-auth-portal/" class="adb-btn adb-btn--secondary adb-btn--small">Login</a>
                 <a href="https://adb-io.github.io/adb-io-auth-portal/pages/register.html" class="adb-btn adb-btn--primary adb-btn--small">Get Started</a>
             </div>
-
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </nav>
 
@@ -67,21 +654,21 @@
         <div class="hero-background">
             <div class="hero-particles"></div>
         </div>
-
+        
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 class="hero-title">
-                        The Future of Learning is
+                        The Future of Learning is 
                         <span class="gradient-text">Green & Intelligent</span>
                     </h1>
-
+                    
                     <p class="hero-description">
-                        Revolutionary Learning Management System powered by 4 AI Agents.
-                        Experience personalized education while reducing your carbon footprint
+                        Revolutionary Learning Management System powered by 4 AI Agents. 
+                        Experience personalized education while reducing your carbon footprint 
                         with our sustainable technology.
                     </p>
-
+                    
                     <div class="hero-stats">
                         <div class="stat">
                             <span class="stat-number">4</span>
@@ -96,7 +683,7 @@
                             <span class="stat-label">Personalized</span>
                         </div>
                     </div>
-
+                    
                     <div class="hero-actions">
                         <a href="https://adb-io.github.io/adb-io-auth-portal/pages/register.html" class="adb-btn adb-btn--primary adb-btn--large">
                             Start Learning Free
@@ -107,7 +694,7 @@
                         </button>
                     </div>
                 </div>
-
+                
                 <div class="hero-visual">
                     <div class="dashboard-preview">
                         <div class="preview-header">
@@ -153,272 +740,60 @@
                     Experience the perfect blend of artificial intelligence and environmental consciousness
                 </p>
             </div>
-
+            
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
                     <h3 class="feature-title">Personalized Learning</h3>
                     <p class="feature-description">
-                        AI-powered content recommendations tailored to your learning style,
+                        AI-powered content recommendations tailored to your learning style, 
                         pace, and preferences for maximum effectiveness.
                     </p>
                 </div>
-
+                
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
                     <h3 class="feature-title">Lightning Fast</h3>
                     <p class="feature-description">
-                        Optimized for speed with green computing principles.
+                        Optimized for speed with green computing principles. 
                         Load times under 1 second, minimal resource usage.
                     </p>
                 </div>
-
+                
                 <div class="feature-card">
                     <div class="feature-icon">🌱</div>
                     <h3 class="feature-title">Eco-Friendly</h3>
                     <p class="feature-description">
-                        Reduce your digital carbon footprint by 75% while learning.
+                        Reduce your digital carbon footprint by 75% while learning. 
                         Sustainable technology for a better future.
                     </p>
                 </div>
-
+                
                 <div class="feature-card">
                     <div class="feature-icon">🔒</div>
                     <h3 class="feature-title">Secure & Private</h3>
                     <p class="feature-description">
-                        PASETO authentication, end-to-end encryption, and
+                        PASETO authentication, end-to-end encryption, and 
                         privacy-first design protect your data.
                     </p>
                 </div>
-
+                
                 <div class="feature-card">
                     <div class="feature-icon">📱</div>
                     <h3 class="feature-title">Mobile First</h3>
                     <p class="feature-description">
-                        Responsive design that works perfectly on all devices.
+                        Responsive design that works perfectly on all devices. 
                         Learn anywhere, anytime, on any screen size.
                     </p>
                 </div>
-
+                
                 <div class="feature-card">
                     <div class="feature-icon">🚀</div>
                     <h3 class="feature-title">Always Improving</h3>
                     <p class="feature-description">
-                        Continuous AI learning and updates. The system gets
+                        Continuous AI learning and updates. The system gets 
                         smarter and more efficient over time.
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Agents Section -->
-    <section class="ai-agents" id="ai-agents">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Meet Your AI Learning Assistants</h2>
-                <p class="section-description">
-                    Four specialized AI agents working together to revolutionize your learning experience
-                </p>
-            </div>
-
-            <div class="agents-grid">
-                <div class="agent-card">
-                    <div class="agent-header">
-                        <div class="agent-icon">🤖</div>
-                        <h3 class="agent-title">Content Curator</h3>
-                        <span class="agent-status">Active</span>
-                    </div>
-                    <p class="agent-description">
-                        Intelligently analyzes and recommends learning materials based on your
-                        progress, interests, and learning style. Discovers the perfect content for you.
-                    </p>
-                    <div class="agent-features">
-                        <span class="feature-tag">Smart Recommendations</span>
-                        <span class="feature-tag">Content Analysis</span>
-                        <span class="feature-tag">Personalization</span>
-                    </div>
-                </div>
-
-                <div class="agent-card">
-                    <div class="agent-header">
-                        <div class="agent-icon">📝</div>
-                        <h3 class="agent-title">Assessment Generator</h3>
-                        <span class="agent-status">Active</span>
-                    </div>
-                    <p class="agent-description">
-                        Creates personalized quizzes, assignments, and assessments that adapt to
-                        your knowledge level. Provides instant feedback and detailed explanations.
-                    </p>
-                    <div class="agent-features">
-                        <span class="feature-tag">Auto-Generation</span>
-                        <span class="feature-tag">Adaptive Testing</span>
-                        <span class="feature-tag">Instant Feedback</span>
-                    </div>
-                </div>
-
-                <div class="agent-card">
-                    <div class="agent-header">
-                        <div class="agent-icon">📊</div>
-                        <h3 class="agent-title">Learning Analytics</h3>
-                        <span class="agent-status">Active</span>
-                    </div>
-                    <p class="agent-description">
-                        Tracks your learning patterns, predicts performance, and identifies areas
-                        for improvement. Provides insights to optimize your study strategy.
-                    </p>
-                    <div class="agent-features">
-                        <span class="feature-tag">Performance Tracking</span>
-                        <span class="feature-tag">Predictive Analytics</span>
-                        <span class="feature-tag">Study Optimization</span>
-                    </div>
-                </div>
-
-                <div class="agent-card">
-                    <div class="agent-header">
-                        <div class="agent-icon">🌿</div>
-                        <h3 class="agent-title">Green Computing</h3>
-                        <span class="agent-status">Active</span>
-                    </div>
-                    <p class="agent-description">
-                        Monitors and optimizes system performance for minimal environmental impact.
-                        Tracks your carbon footprint and suggests eco-friendly learning habits.
-                    </p>
-                    <div class="agent-features">
-                        <span class="feature-tag">Carbon Tracking</span>
-                        <span class="feature-tag">Energy Optimization</span>
-                        <span class="feature-tag">Sustainability</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Green Computing Section -->
-    <section class="green-computing" id="green-computing">
-        <div class="container">
-            <div class="green-content">
-                <div class="green-text">
-                    <h2 class="section-title">🌿 Sustainable Learning Technology</h2>
-                    <p class="section-description">
-                        ADB-IO is designed with environmental responsibility at its core.
-                        Our green computing approach reduces energy consumption while
-                        delivering superior performance.
-                    </p>
-
-                    <div class="green-stats">
-                        <div class="green-stat">
-                            <span class="stat-number">75%</span>
-                            <span class="stat-label">Less Energy Usage</span>
-                        </div>
-                        <div class="green-stat">
-                            <span class="stat-number">0.2kg</span>
-                            <span class="stat-label">CO₂ per Session</span>
-                        </div>
-                        <div class="green-stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Renewable Hosting</span>
-                        </div>
-                    </div>
-
-                    <div class="green-features">
-                        <div class="green-feature">
-                            <span class="feature-icon">⚡</span>
-                            <span>Optimized Code & Minimal Dependencies</span>
-                        </div>
-                        <div class="green-feature">
-                            <span class="feature-icon">☁️</span>
-                            <span>Serverless Architecture</span>
-                        </div>
-                        <div class="green-feature">
-                            <span class="feature-icon">📱</span>
-                            <span>Mobile-First Design</span>
-                        </div>
-                        <div class="green-feature">
-                            <span class="feature-icon">🔋</span>
-                            <span>Battery-Friendly Interface</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="green-visual">
-                    <div class="carbon-tracker">
-                        <h4>Your Carbon Impact</h4>
-                        <div class="carbon-meter">
-                            <div class="meter-fill" style="width: 25%"></div>
-                        </div>
-                        <p>25% of traditional LMS carbon footprint</p>
-
-                        <div class="eco-tips">
-                            <h5>💡 Eco Tips</h5>
-                            <ul>
-                                <li>Use dark mode to save battery</li>
-                                <li>Study during renewable energy peak hours</li>
-                                <li>Enable power saving mode</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Demo Section -->
-    <section class="demo" id="demo">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Experience ADB-IO in Action</h2>
-                <p class="section-description">
-                    See how our AI agents work together to create a personalized learning experience
-                </p>
-            </div>
-
-            <div class="demo-content">
-                <div class="demo-tabs">
-                    <button class="demo-tab active" data-tab="student">Student View</button>
-                    <button class="demo-tab" data-tab="teacher">Teacher View</button>
-                    <button class="demo-tab" data-tab="admin">Admin View</button>
-                </div>
-
-                <div class="demo-panels">
-                    <div class="demo-panel active" id="student-panel">
-                        <div class="demo-links">
-                            <a href="https://adb-io.github.io/adb-io-student-portal/" class="demo-link" target="_blank">
-                                <div class="link-icon">👨‍🎓</div>
-                                <div class="link-content">
-                                    <h4>Student Dashboard</h4>
-                                    <p>Personalized learning experience with AI recommendations</p>
-                                </div>
-                                <span class="link-arrow">→</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="demo-panel" id="teacher-panel">
-                        <div class="demo-links">
-                            <a href="https://adb-io.github.io/adb-io-lecturer-dashboard/" class="demo-link" target="_blank">
-                                <div class="link-icon">👩‍🏫</div>
-                                <div class="link-content">
-                                    <h4>Teacher Dashboard</h4>
-                                    <p>AI-powered course management and student analytics</p>
-                                </div>
-                                <span class="link-arrow">→</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="demo-panel" id="admin-panel">
-                        <div class="demo-links">
-                            <a href="https://adb-io.github.io/adb-io-admin-panel/" class="demo-link" target="_blank">
-                                <div class="link-icon">⚙️</div>
-                                <div class="link-content">
-                                    <h4>Admin Panel</h4>
-                                    <p>System management with green computing insights</p>
-                                </div>
-                                <span class="link-arrow">→</span>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -434,11 +809,11 @@
                         <span class="adb-green-badge">Green AI</span>
                     </div>
                     <p class="footer-description">
-                        Revolutionary Learning Management System powered by AI and
+                        Revolutionary Learning Management System powered by AI and 
                         designed for environmental sustainability.
                     </p>
                 </div>
-
+                
                 <div class="footer-section">
                     <h4>Platform</h4>
                     <ul class="footer-links">
@@ -448,28 +823,8 @@
                         <li><a href="https://adb-io.github.io/adb-io-shared-components/">Components</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-section">
-                    <h4>AI Agents</h4>
-                    <ul class="footer-links">
-                        <li><a href="#ai-agents">Content Curator</a></li>
-                        <li><a href="#ai-agents">Assessment Generator</a></li>
-                        <li><a href="#ai-agents">Learning Analytics</a></li>
-                        <li><a href="#ai-agents">Green Computing</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Resources</h4>
-                    <ul class="footer-links">
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#green-computing">Green Computing</a></li>
-                        <li><a href="#demo">Demo</a></li>
-                        <li><a href="https://github.com/adb-io">GitHub</a></li>
-                    </ul>
-                </div>
             </div>
-
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 ADB-IO. Built with 🌿 for sustainable education.</p>
                 <div class="footer-stats">
@@ -482,6 +837,46 @@
     </footer>
 
     <!-- Scripts -->
-    <script type="module" src="js/main.js"></script>
+    <script>
+        // Simple demo functionality without external dependencies
+        document.addEventListener('DOMContentLoaded', function() {
+            const watchDemoBtn = document.getElementById('watch-demo');
+            if (watchDemoBtn) {
+                watchDemoBtn.addEventListener('click', function() {
+                    alert('🎬 Demo coming soon!\n\nVisit our GitHub repositories:\n• Student Portal: adb-io-student-portal\n• Teacher Dashboard: adb-io-lecturer-dashboard\n• Admin Panel: adb-io-admin-panel\n• Shared Components: adb-io-shared-components');
+                });
+            }
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Navbar scroll effect
+            let lastScrollY = window.scrollY;
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                const currentScrollY = window.scrollY;
+                
+                if (currentScrollY > 100) {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                } else {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                }
+
+                lastScrollY = currentScrollY;
+            });
+        });
+    </script>
 </body>
 </html>
